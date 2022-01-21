@@ -17,6 +17,18 @@ body {
   min-height: 100vh;
 }
 
+.intro-btn {
+  font-family: "Inter", sans-serif;
+  display: block;
+  margin: 0 auto;
+  min-height: 7rem;
+  font-size: 2em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  padding: 1rem 2.5rem;
+  color: #31363a;
+}
+
 /*game*/
 .game__header {
   text-align: center;
