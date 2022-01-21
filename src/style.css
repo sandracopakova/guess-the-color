@@ -3,3 +3,46 @@
 *:after {
   box-sizing: border-box;
 }
+
+body {
+  font-family: "Inter", sans-serif;
+  background-image: url(./images/concrete_wall.png);
+  color: #f8f8f8;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 100vh;
+}
+
+/*game*/
+.game__header {
+  text-align: center;
+}
+
+.game__header--guessing-color {
+  font-size: 2em;
+}
+
+.game__header--title {
+  font-size: 3.5em;
+  text-transform: uppercase;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.box {
+  min-width: 180px;
+  min-height: 180px;
+  border: 1px solid deepskyblue;
+  border-radius: 20%;
+}

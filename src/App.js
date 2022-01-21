@@ -1,5 +1,11 @@
 import React from "react";
+import Intro from "./components/Intro";
+import Game from "./components/Game";
 
 export default function App() {
-  return <h1>app</h1>;
+  return (
+    <div className="app">
+      <Game />
+    </div>
+  );
 }
