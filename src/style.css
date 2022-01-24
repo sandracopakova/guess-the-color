@@ -33,6 +33,7 @@ body {
 .action-line {
   min-height: 80px;
   background: #f8f8f8;
+  color: black;
 }
 
 /*game*/

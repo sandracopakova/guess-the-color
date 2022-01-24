@@ -25,7 +25,20 @@ export default function Game() {
   return (
     <>
       <Header color={random} showBg={win} />
-      <div className="action-line"></div>
+      <div className="action-line">
+        {win ? (
+          <button
+            onClick={() => {
+              const newColors = createColors();
+              setColors(newColors);
+              setWin(false);
+              setRandom(newColors[Math.floor(Math.random() * newColors.length)]);
+            }}
+          >
+            Play again
+          </button>
+        ) : undefined}
+      </div>
       <div className="box-container">
         {colors.map((color) => (
           <ColorBox
