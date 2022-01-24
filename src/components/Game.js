@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import ColorBox from "./ColorBox";
 import Header from "./Header";
 
@@ -20,26 +20,32 @@ const createColors = () => {
 
 export default function Game() {
   const [colors, setColors] = useState(createColors());
-  let random = colors[Math.floor(Math.random() * colors.length)];
+  const [win, setWin] = useState(false);
+  const [random, setRandom] = useState(colors[Math.floor(Math.random() * colors.length)]);
   return (
     <>
-      <Header color={random} />
+      <Header color={random} showBg={win} />
+      <div className="action-line"></div>
       <div className="box-container">
         {colors.map((color) => (
           <ColorBox
             color={color}
             onClick={(color) => {
+              console.log(color, random, color === random);
               if (color === random) {
                 setColors([color, color, color, color, color, color]);
+                setWin(true);
               } else {
-                setColors(colors.map((c) => {
-                  if (c === color) {
-                    const newColor = [...color]
-                    newColor[3] = false;
-                    return newColor;
-                  }
-                  return c;
-                }))
+                setColors(
+                  colors.map((c) => {
+                    if (c === color) {
+                      const newColor = [...color];
+                      newColor[3] = false;
+                      return newColor;
+                    }
+                    return c;
+                  })
+                );
               }
             }}
           />
