@@ -33,7 +33,23 @@ body {
 .action-line {
   min-height: 80px;
   background: #f8f8f8;
-  color: black;
+  color: 31363a;
+  display: flex;
+  justify-content: center;
+}
+
+.action-line__btn {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  color: #31363a;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+.action-line__btn:hover {
+  background: #31363a;
+  color: #f8f8f8;
 }
 
 /*game*/

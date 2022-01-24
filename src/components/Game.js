@@ -28,6 +28,7 @@ export default function Game() {
       <div className="action-line">
         {win ? (
           <button
+            className="action-line__btn"
             onClick={() => {
               const newColors = createColors();
               setColors(newColors);
