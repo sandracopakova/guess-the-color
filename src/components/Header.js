@@ -6,7 +6,7 @@ export default function Header(props) {
   return (
     <>
       <div className="game__header">
-        <div className="game__header--title">the great {props.isIntro ? <StartBtn /> : <RgbGenerator />} guessing game</div>
+        <div className="game__header--title">the great {props.isIntro ? <StartBtn /> : <RgbGenerator color={props.color} />} guessing game</div>
       </div>
     </>
   );

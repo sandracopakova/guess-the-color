@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import ColorBox from "./ColorBox";
+import Header from "./Header";
+import { colorGen } from "./RgbGenerator";
+
+const createColors = () => {
+  const result = [];
+  for (let i = 0; i < 6; i++) {
+    result.push(colorGen());
+  }
+  return result;
+};
 
 export default function Game() {
+  const [colors, setColors] = useState(createColors());
+  let random = colors[Math.floor(Math.random() * colors.length)];
   return (
     <>
-      <div className="game__header">
-        <div className="game__header--title">
-          the great <div className="game__header--guessing-color">RGB()</div> guessing game
-        </div>
-      </div>
-
+      <Header color={random} />
       <div className="box-container">
-        <ColorBox />
-        <ColorBox />
-        <ColorBox />
-        <ColorBox />
-        <ColorBox />
-        <ColorBox />
+        {colors.map((color) => (
+          <ColorBox color={color} />
+        ))}
       </div>
     </>
   );

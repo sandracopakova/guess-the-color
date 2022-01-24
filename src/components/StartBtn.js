@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function StartBtn() {
+export default function StartBtn(props) {
   return (
     <button
       className="intro-btn"

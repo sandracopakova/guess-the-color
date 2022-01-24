@@ -55,6 +55,6 @@ body {
 .box {
   min-width: 180px;
   min-height: 180px;
-  border: 1px solid deepskyblue;
+  /*border: 1px solid deepskyblue;*/
   border-radius: 20%;
 }
