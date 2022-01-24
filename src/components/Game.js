@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import ColorBox from "./ColorBox";
 import Header from "./Header";
-import { colorGen } from "./RgbGenerator";
+
+function colorGen() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  const a = true;
+  return [r, g, b, a];
+}
 
 const createColors = () => {
   const result = [];
@@ -19,7 +26,23 @@ export default function Game() {
       <Header color={random} />
       <div className="box-container">
         {colors.map((color) => (
-          <ColorBox color={color} />
+          <ColorBox
+            color={color}
+            onClick={(color) => {
+              if (color === random) {
+                setColors([color, color, color, color, color, color]);
+              } else {
+                setColors(colors.map((c) => {
+                  if (c === color) {
+                    const newColor = [...color]
+                    newColor[3] = false;
+                    return newColor;
+                  }
+                  return c;
+                }))
+              }
+            }}
+          />
         ))}
       </div>
     </>
