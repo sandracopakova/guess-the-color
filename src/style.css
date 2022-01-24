@@ -5,6 +5,7 @@
 }
 
 body {
+  margin: 0 auto;
   font-family: "Inter", sans-serif;
   background-image: url(./images/concrete_wall.png);
   color: #f8f8f8;
