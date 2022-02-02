@@ -31,11 +31,12 @@ body {
 }
 
 .action-line {
-  min-height: 80px;
+  min-height: 5rem;
   background: #f8f8f8;
   color: 31363a;
   display: flex;
   justify-content: center;
+  margin: 1rem 0;
 }
 
 .action-line__btn {
@@ -44,7 +45,7 @@ body {
   text-transform: uppercase;
   color: #31363a;
   font-size: 1.5rem;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .action-line__btn:hover {
@@ -55,6 +56,7 @@ body {
 /*game*/
 .game__header {
   text-align: center;
+  margin: 1rem 0;
 }
 
 .game__header--guessing-color {
@@ -73,11 +75,34 @@ body {
   gap: 1rem;
   max-width: 600px;
   margin: 0 auto;
+  margin: 1rem 0;
+  align-self: center;
 }
 
 .box {
   min-width: 180px;
   min-height: 180px;
-  /*border: 1px solid deepskyblue;*/
   border-radius: 20%;
+}
+
+@media only screen and (max-width: 576px) {
+  .game__header--title {
+    font-size: 1.5rem;
+  }
+  .game__header--guessing-color {
+    font-size: 2rem;
+  }
+  .box-container {
+    gap: 1.1rem;
+  }
+  .box {
+    min-width: 8rem;
+    min-height: 8rem;
+  }
+  .action-line {
+    min-height: 3rem;
+  }
+  .action-line__btn {
+    font-size: 1rem;
+  }
 }
